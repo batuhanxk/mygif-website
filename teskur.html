@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teşekkürlerrrr</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;  /* Yatayda ortalar */
+            align-items: center;      /* Dikeyde ortalar */
+            height: 100vh;            /* Sayfa yüksekliği */
+            margin: 0;
+            background-color: #fce4ec;  /* Pembe arka plan */
+            position: relative;       /* Konumlandırma için gerekli */
+        }
+        .tenor-gif-embed {
+            text-align: center;  /* İçeriği ortalamak için */
+            max-width: 500px;    /* GIF'in genişliği */
+            margin-top: 100px;   /* GIF'i biraz daha aşağıya almak için */
+            border-radius: 15px; /* Kenarları yumuşatmak için */
+            overflow: hidden;    /* Kenarların düzgün görünmesi için */
+            display: none;       /* Başlangıçta gizlemek için */
+        }
+        .gif-caption {
+            font-family: 'Arial', sans-serif;  /* Yazı fontu */
+            font-size: 24px;                  /* Yazı boyutu */
+            font-weight: bold;                /* Kalın yazı */
+            color: #ff4081;                   /* Yazı rengi */
+            position: absolute;               /* Sayfanın en altına yerleştirebilmek için */
+            bottom: 10px;                     /* Sayfanın altına 10px mesafe */
+            width: 100%;                      /* Yazı genişliği sayfanın tamamını kaplasın */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- İlk GIF -->
+    <div class="tenor-gif-embed" id="gif1" data-postid="16831149426068931430" data-share-method="host" data-aspect-ratio="0.761044" data-width="100%">
+        <a href="https://tenor.com/view/cat-gif-16831149426068931430">Cat GIF</a> from <a href="https://tenor.com/search/cat-gifs">Cat GIFs</a>
+    </div> 
+
+    <!-- İkinci GIF -->
+    <div class="tenor-gif-embed" id="gif2" data-postid="24869473" data-share-method="host" data-aspect-ratio="0.99375" data-width="100%">
+        <a href="https://tenor.com/view/sunakook-gifs-cat-hearts-gif-24869473">Sunakook Gifs GIF</a> from <a href="https://tenor.com/search/sunakook-gifs">Sunakook GIFs</a>
+    </div>
+
+    <!-- GIF altındaki yazı -->
+    <div class="gif-caption">
+        Evet, diyeceğini biliyordum
+    </div>
+
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+    <script>
+        // Başlangıçta yalnızca ilk GIF'i gösteriyoruz
+        let gifs = document.querySelectorAll('.tenor-gif-embed');
+        let currentGif = 0; // İlk gif başlangıçta aktif
+
+        // İlk GIF'i göster
+        gifs[currentGif].style.display = 'block';
+
+        // GIF'ler arasında geçiş yapmak için fonksiyon
+        function changeGif() {
+            gifs[currentGif].style.display = 'none'; // Mevcut GIF'i gizle
+            currentGif = (currentGif + 1) % gifs.length; // Sonraki GIF'e geç
+            gifs[currentGif].style.display = 'block'; // Yeni GIF'i göster
+        }
+
+        // Her 5 saniyede bir GIF değişimini başlat
+        setInterval(changeGif, 5000);
+    </script>
+
+</body>
+</html>
